@@ -6,10 +6,8 @@ import Avatar from "@mui/material/Avatar";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export const Navbar = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
-  console.log(
-    `user: ${user}, authenticated: ${isAuthenticated}, loading: ${isLoading}`
-  );
+  const { user } = useAuth0();
+
   return (
     <nav className="navbar">
       <div className="navitems">
