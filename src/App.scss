@@ -1,15 +1,61 @@
+// reset
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    border: 0px;
+    font-family: 'Joan', serif;
+}
+
 body {
     text-align: center;
 }
 
-nav {
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: dodgerblue;
     position: sticky;
     top: 0;
+    padding: 25px;
+    border-bottom: 1px solid rgb(87, 87, 87);
+
+    .avatar {
+        margin-top:15px;
+        margin-right:15px;
+        position:fixed;
+        top:0;
+        right:0;
+    }
+
+    .navitems {
+        a {
+            text-decoration: none;
+            padding: 5px;
+            margin: 0 10px;
+            border: 2px solid white;
+            border-radius: 5px;
+            background-color: white;
+            color: dodgerblue;
+
+            &:hover {
+                background-color: dodgerblue;
+                color: white;
+            }
+        }
+
+
+    }
 }
 
 footer {
+    border-top: 1px solid rgb(87, 87, 87);
+    color: white;
+    background-color: dodgerblue;
     // position: sticky;
     // bottom: 0;
+    padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
