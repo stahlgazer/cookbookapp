@@ -1,20 +1,68 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Login } from "./Login";
+import { Logout } from "./Logout";
 import Avatar from "@mui/material/Avatar";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export const Navbar = () => {
+  const { user, isAuthenticated, isLoading } = useAuth0();
+  console.log(
+    `user: ${user}, authenticated: ${isAuthenticated}, loading: ${isLoading}`
+  );
   return (
     <nav className="navbar">
       <div className="navitems">
-        <Link to="/">Home</Link>
-        <Link to="/recipes">Recipes</Link>
-        <Link to="/dashboard">Dashboard</Link>
-        <Link to="/contact">Contact</Link>
-      </div>{" "}
+        <NavLink
+          style={({ isActive }) => {
+            return {
+              color: isActive ? "white" : "",
+              backgroundColor: isActive ? "dodgerblue" : "",
+            };
+          }}
+          to="/"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          style={({ isActive }) => {
+            return {
+              color: isActive ? "white" : "",
+              backgroundColor: isActive ? "dodgerblue" : "",
+            };
+          }}
+          to="/recipes"
+        >
+          Recipes
+        </NavLink>
+        <NavLink
+          style={({ isActive }) => {
+            return {
+              color: isActive ? "white" : "",
+              backgroundColor: isActive ? "dodgerblue" : "",
+            };
+          }}
+          to="/dashboard"
+        >
+          Dashboard
+        </NavLink>
+        <NavLink
+          style={({ isActive }) => {
+            return {
+              color: isActive ? "white" : "",
+              backgroundColor: isActive ? "dodgerblue" : "",
+            };
+          }}
+          to="/contact"
+        >
+          Contact
+        </NavLink>
+      </div>
+      {user ? <Logout /> : <Login />}
       <Avatar
         className="avatar"
         alt="User Avatar"
-        src="/static/images/avatar/1.jpg"
+        src={user ? `${user.picture}` : "/static/images/avatar/1.jpg"}
       />
     </nav>
   );

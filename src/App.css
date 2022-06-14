@@ -33,6 +33,27 @@ body {
   right: 0;
 }
 
+.navbar .navbtn {
+  font-size: 16px;
+  padding: 5px;
+  margin: 0 10px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: white;
+  color: dodgerblue;
+}
+
+.navbar .navbtn:hover {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.navbar .navitems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .navbar .navitems a {
   text-decoration: none;
   padding: 5px;
