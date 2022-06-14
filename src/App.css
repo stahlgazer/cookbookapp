@@ -78,4 +78,35 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+form {
+  border: 1px solid black;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+form input {
+  border: 1px solid black;
+}
+
+form textarea {
+  border: 1px solid black;
+  resize: none;
+}
+
+form button {
+  width: 50px;
+  margin: 0 auto;
+}
 /*# sourceMappingURL=App.css.map */

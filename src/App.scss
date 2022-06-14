@@ -30,13 +30,14 @@ body {
     }
 
     .navbtn {
-        font-size:16px;
+        font-size: 16px;
         padding: 5px;
         margin: 0 10px;
         border: 2px solid white;
         border-radius: 5px;
         background-color: white;
         color: dodgerblue;
+
         &:hover {
             background-color: dodgerblue;
             color: white;
@@ -45,6 +46,7 @@ body {
 
     .navitems {
         display: flex;
+
         a {
             text-decoration: none;
             padding: 5px;
@@ -74,4 +76,29 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+// contact formspree styles
+form {
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+
+    input {
+        border: 1px solid black;
+    }
+
+    textarea {
+        border: 1px solid black;
+        resize: none;
+    }
+
+    button {
+        width: 50px;
+        margin: 0 auto;
+    }
 }
