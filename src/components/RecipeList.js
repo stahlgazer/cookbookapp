@@ -21,6 +21,15 @@ export const RecipeList = () => {
       <button onClick={() => setSearchCategory("lunch")}>Lunch</button>
       <button onClick={() => setSearchCategory("dinner")}>Dinner</button>
       <button onClick={() => setSearchCategory("dessert")}>Dessert</button>
+      <button onClick={() => setSearchCategory("snack")}>Snack</button>
+      <label>Search by Recipe Name: </label>
+      <input
+        value={searchCategory}
+        type="text"
+        name="search"
+        onChange={(e) => setSearchCategory(e.target.value)}
+      ></input>
+      <button onClick={() => setSearchCategory("")}>Clear</button>
       {recipes &&
         recipes
           .filter((values) => {
@@ -28,6 +37,9 @@ export const RecipeList = () => {
               return values;
             }
             if (values.category.includes(searchCategory)) {
+              return values;
+            }
+            if (values.name.includes(searchCategory)) {
               return values;
             } else return false;
           })
