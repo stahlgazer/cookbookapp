@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { RecipeList } from "../src/components/RecipeList";
+import { SingleRecipe } from "../src/components/SingleRecipe";
 import { Dashboard } from "./components/Dashboard";
 import { SharedLayout } from "./components/SharedLayout";
 import { Home } from "./components/Home";
@@ -22,6 +23,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/recipes" element={<RecipeList />} />
+            <Route path="/recipes/:id" element={<SingleRecipe />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Error />} />
           </Route>
