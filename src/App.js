@@ -15,7 +15,7 @@ function App() {
     <Auth0Provider
       domain="dev-vmhaa30k.us.auth0.com"
       clientId="ISWfohXdV2UzeaRWsHSVojI9dVse50cP"
-      redirectUri={window.location.origin}
+      redirectUri={`${window.location.origin}/recipes`}
     >
       <BrowserRouter>
         <Routes>

@@ -1,3 +1,6 @@
+// variables
+$primaryColor: dodgerblue;
+
 // reset
 * {
     margin: 0px;
@@ -16,7 +19,7 @@ body {
 .navbar {
     display: flex;
     justify-content: center;
-    background-color: dodgerblue;
+    background-color: $primaryColor;
     position: sticky;
     top: 0;
     padding: 25px;
@@ -35,10 +38,10 @@ body {
             border: 2px solid white;
             border-radius: 5px;
             background-color: white;
-            color: dodgerblue;
+            color: $primaryColor;
 
             &:hover {
-                background-color: dodgerblue;
+                background-color: $primaryColor;
                 color: white;
             }
         }
@@ -70,16 +73,16 @@ body {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        border: 1px solid dodgerblue;
+        border: 1px solid $primaryColor;
         background: rgba($color: white, $alpha: .5);
         padding: 5%;
 
         h1 {
-            color: dodgerblue;
+            color: $primaryColor;
         }
 
         h3 {
-            color: dodgerblue;
+            color: $primaryColor;
         }
 
         ul {
@@ -96,13 +99,13 @@ body {
                 margin-left: -1em;
                 font-weight: bold;
                 content: '\2022';
-                color: dodgerblue;
+                color: $primaryColor;
             }
         }
 
         button {
             color: white;
-            background-color: dodgerblue;
+            background-color: $primaryColor;
             width: 150px;
             padding: 2%;
         }
@@ -121,7 +124,7 @@ body {
         margin: 10px;
 
         button {
-            cursor:pointer;
+            cursor: pointer;
             margin: 10px;
         }
     }
@@ -177,7 +180,7 @@ body {
 footer {
     border-top: 1px solid rgb(87, 87, 87);
     color: white;
-    background-color: dodgerblue;
+    background-color: $primaryColor;
     padding: 10px;
     position: fixed;
     bottom: 0;

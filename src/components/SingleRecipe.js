@@ -22,7 +22,7 @@ export const SingleRecipe = () => {
           <p>info: {recipe.description}</p>
           <p>{recipe.image}</p>
           <p>{recipe.category}</p>
-          <Link to="/">Back Home</Link>
+          <Link to="/recipes">Back to Recipes</Link>
         </div>
       )}
     </section>
