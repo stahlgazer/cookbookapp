@@ -9,7 +9,7 @@ export const Contact = () => {
     return <h4>Thanks for your feedback!</h4>;
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="contactform" onSubmit={handleSubmit}>
       <label htmlFor="email">Email Address</label>
       <input
         autoFocus

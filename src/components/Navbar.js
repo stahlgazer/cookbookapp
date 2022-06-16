@@ -12,6 +12,7 @@ export const Navbar = () => {
     <nav className="navbar">
       <div className="navitems">
         <NavLink
+          className="navbtn"
           style={({ isActive }) => {
             return {
               color: isActive ? "white" : "",
@@ -23,6 +24,7 @@ export const Navbar = () => {
           Home
         </NavLink>
         <NavLink
+          className="navbtn"
           style={({ isActive }) => {
             return {
               color: isActive ? "white" : "",
@@ -34,6 +36,7 @@ export const Navbar = () => {
           Recipes
         </NavLink>
         <NavLink
+          className="navbtn"
           style={({ isActive }) => {
             return {
               color: isActive ? "white" : "",
@@ -45,6 +48,7 @@ export const Navbar = () => {
           Dashboard
         </NavLink>
         <NavLink
+          className="navbtn"
           style={({ isActive }) => {
             return {
               color: isActive ? "white" : "",
@@ -55,8 +59,9 @@ export const Navbar = () => {
         >
           Contact
         </NavLink>
+        {user ? <Logout /> : <Login />}
       </div>
-      {user ? <Logout /> : <Login />}
+
       <Avatar
         className="avatar"
         alt="User Avatar"

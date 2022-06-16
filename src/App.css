@@ -3,10 +3,10 @@
   padding: 0px;
   outline: none;
   border: 0px;
-  font-family: 'Joan', serif;
 }
 
 body {
+  font-family: 'Joan', serif;
   text-align: center;
 }
 
@@ -25,48 +25,37 @@ body {
   border-bottom: 1px solid #575757;
 }
 
-.navbar .avatar {
-  margin-top: 15px;
-  margin-right: 15px;
-  position: fixed;
-  top: 0;
-  right: 0;
-}
-
-.navbar .navbtn {
-  font-size: 16px;
-  padding: 5px;
-  margin: 0 10px;
-  border: 2px solid white;
-  border-radius: 5px;
-  background-color: white;
-  color: dodgerblue;
-}
-
-.navbar .navbtn:hover {
-  background-color: dodgerblue;
-  color: white;
-}
-
 .navbar .navitems {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.navbar .navitems a {
+.navbar .navitems .navbtn {
+  width: 75px;
   text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 16px;
   padding: 5px;
-  margin: 0 10px;
+  margin: 0 2px;
   border: 2px solid white;
   border-radius: 5px;
   background-color: white;
   color: dodgerblue;
 }
 
-.navbar .navitems a:hover {
+.navbar .navitems .navbtn:hover {
   background-color: dodgerblue;
   color: white;
+}
+
+.navbar .avatar {
+  margin-top: 20px;
+  margin-right: 5px;
+  position: fixed;
+  top: 0;
+  right: 0;
 }
 
 footer {
