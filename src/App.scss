@@ -4,6 +4,7 @@
     padding: 0px;
     outline: none;
     border: 0px;
+    box-sizing: border-box;
 }
 
 body {
@@ -11,7 +12,7 @@ body {
     text-align: center;
 }
 
-
+// shared layout navbar
 .navbar {
     display: flex;
     justify-content: center;
@@ -27,7 +28,6 @@ body {
         .navbtn {
             text-decoration: none;
             cursor: pointer;
-            width: 75px;
             transition: 0.5s;
             font-size: 16px;
             padding: 5px;
@@ -53,8 +53,104 @@ body {
     }
 }
 
+// home page
+.home-container {
+    height: 90vh;
+    background-image: url('./images/cookbook.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid dodgerblue;
+        background: rgba($color: white, $alpha: .5);
+        padding: 5%;
+
+        h1 {
+            color: dodgerblue;
+        }
+
+        h3 {
+            color: dodgerblue;
+        }
+
+        ul {
+            text-align: left;
+            list-style: none;
+
+            li {
+                margin: 2%;
+            }
+
+            li::before {
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+                font-weight: bold;
+                content: '\2022';
+                color: dodgerblue;
+            }
+        }
+
+        button {
+            color: white;
+            background-color: dodgerblue;
+            width: 150px;
+            padding: 2%;
+        }
+    }
+}
+
+
+
+// recipes
+.recipe-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+
+    .filters-container {
+        margin: 10px;
+
+        button {
+            cursor:pointer;
+            margin: 10px;
+        }
+    }
+
+    .search-container {
+        background-color: rgb(197, 226, 255);
+    }
+
+    .recipes-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 90%;
+        margin: 0 auto;
+        border: 1px solid lightgray;
+
+
+        .recipes-cards {
+            flex-grow: 1;
+            width: 300px;
+            border: 1px solid lightgray;
+            padding: 10px;
+            margin: 10px;
+        }
+    }
+}
+
 // contact formspree styles
-.contactform {
+.contact-form {
     border: 1px solid black;
     padding: 10px;
     display: flex;

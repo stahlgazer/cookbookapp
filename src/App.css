@@ -3,6 +3,8 @@
   padding: 0px;
   outline: none;
   border: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -32,8 +34,8 @@ body {
 }
 
 .navbar .navitems .navbtn {
-  width: 75px;
   text-decoration: none;
+  cursor: pointer;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: 16px;
@@ -58,17 +60,120 @@ body {
   right: 0;
 }
 
-footer {
-  border-top: 1px solid #575757;
-  color: white;
-  background-color: dodgerblue;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+.home-container {
+  height: 90vh;
+  background-image: url("./images/cookbook.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-form {
+.home-container .info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 1px solid dodgerblue;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 5%;
+}
+
+.home-container .info-container h1 {
+  color: dodgerblue;
+}
+
+.home-container .info-container h3 {
+  color: dodgerblue;
+}
+
+.home-container .info-container ul {
+  text-align: left;
+  list-style: none;
+}
+
+.home-container .info-container ul li {
+  margin: 2%;
+}
+
+.home-container .info-container ul li::before {
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  font-weight: bold;
+  content: '\2022';
+  color: dodgerblue;
+}
+
+.home-container .info-container button {
+  color: white;
+  background-color: dodgerblue;
+  width: 150px;
+  padding: 2%;
+}
+
+.recipe-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.recipe-section .filters-container {
+  margin: 10px;
+}
+
+.recipe-section .filters-container button {
+  cursor: pointer;
+  margin: 10px;
+}
+
+.recipe-section .search-container {
+  background-color: #c5e2ff;
+}
+
+.recipe-section .recipes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid lightgray;
+}
+
+.recipe-section .recipes-container .recipes-cards {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 300px;
+  border: 1px solid lightgray;
+  padding: 10px;
+  margin: 10px;
+}
+
+.contact-form {
   border: 1px solid black;
   padding: 10px;
   display: -webkit-box;
@@ -85,17 +190,27 @@ form {
   margin: 0 auto;
 }
 
-form input {
+.contact-form input {
   border: 1px solid black;
 }
 
-form textarea {
+.contact-form textarea {
   border: 1px solid black;
   resize: none;
 }
 
-form button {
+.contact-form button {
   width: 50px;
   margin: 0 auto;
+}
+
+footer {
+  border-top: 1px solid #575757;
+  color: white;
+  background-color: dodgerblue;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 /*# sourceMappingURL=App.css.map */
