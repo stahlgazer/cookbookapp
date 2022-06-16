@@ -55,9 +55,9 @@ export const Navbar = () => {
               backgroundColor: isActive ? "dodgerblue" : "",
             };
           }}
-          to="/contact"
+          to="/support"
         >
-          Contact
+          Support
         </NavLink>
         {user ? <Logout /> : <Login />}
       </div>

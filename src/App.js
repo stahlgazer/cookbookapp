@@ -6,7 +6,8 @@ import { Dashboard } from "./components/Dashboard";
 import { SharedLayout } from "./components/SharedLayout";
 import { Home } from "./components/Home";
 import { Error } from "./components/Error";
-import { Contact } from "./components/Contact";
+import { Support } from "./components/Support";
+import { ProtectedRoute } from "./components/utils/ProtectedRoute";
 import { Auth0Provider } from "@auth0/auth0-react";
 import "./App.scss";
 
@@ -21,10 +22,17 @@ function App() {
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/recipes" element={<RecipeList />} />
             <Route path="/recipes/:id" element={<SingleRecipe />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/support" element={<Support />} />
             <Route path="*" element={<Error />} />
           </Route>
         </Routes>

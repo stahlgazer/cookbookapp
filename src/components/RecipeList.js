@@ -53,11 +53,11 @@ export const RecipeList = () => {
             .map((recipe) => {
               return (
                 <div className="recipes-cards" key={recipe.id}>
-                  <p>name: {recipe.name}</p>
-                  <p>author: {recipe.author}</p>
-                  <p>info: {recipe.description}</p>
                   <p>{recipe.image}</p>
-                  <p>{recipe.category}</p>
+                  <p>Name: {recipe.name}</p>
+                  <p>Author: {recipe.author}</p>
+                  <p>Description: {recipe.description}</p>
+                  <p>Category: {recipe.category}</p>
                   <Link to={`/recipes/${recipe.id}`}>Details</Link>
                 </div>
               );
