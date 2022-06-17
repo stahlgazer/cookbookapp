@@ -151,7 +151,17 @@ body {
         }
     }
 }
-
+//create recipe page
+.create-form-container{
+    border:1px solid black;
+    display:flex;
+    justify-content: center;
+    form{
+        display:flex;
+        flex-direction: column;
+        
+    }
+}
 // contact formspree styles
 .contact-form {
     border: 1px solid black;

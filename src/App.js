@@ -7,7 +7,8 @@ import { SharedLayout } from "./components/SharedLayout";
 import { Home } from "./components/Home";
 import { Error } from "./components/Error";
 import { Support } from "./components/Support";
-import { ProtectedRoute } from "./components/utils/ProtectedRoute";
+import { CreateRecipe } from "./components/CreateRecipe";
+import { ProtectedRoute } from "./utils/ProtectedRoute";
 import { Auth0Provider } from "@auth0/auth0-react";
 import "./App.scss";
 
@@ -32,6 +33,7 @@ function App() {
             />
             <Route path="/recipes" element={<RecipeList />} />
             <Route path="/recipes/:id" element={<SingleRecipe />} />
+            <Route path="/create" element={<CreateRecipe />} />
             <Route path="/support" element={<Support />} />
             <Route path="*" element={<Error />} />
           </Route>
