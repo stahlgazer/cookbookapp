@@ -7,7 +7,10 @@ export const CreateRecipe = () => {
   // create recipe + steps form
 
   const { user } = useAuth0();
-  const [stepInput, setStepInput] = useState({});
+  const [stepInput, setStepInput] = useState({
+    number: 0,
+    details: "",
+  });
   const [steps, setSteps] = useState([]);
   const [recipe, setRecipe] = useState({
     name: "",
@@ -45,6 +48,10 @@ export const CreateRecipe = () => {
   };
   const AddStep = () => {
     setSteps((steps) => [...steps, stepInput]);
+    setStepInput({
+      number: 0,
+      details: "",
+    });
   };
   console.log(recipe);
   console.log(stepInput);
@@ -72,6 +79,7 @@ export const CreateRecipe = () => {
             <label>
               Step Number:
               <input
+                required
                 name="number"
                 type="number"
                 onChange={handleStepsInput}
@@ -80,12 +88,17 @@ export const CreateRecipe = () => {
             <label>
               Step Details:
               <input
+                required
                 name="details"
                 type="text"
                 onChange={handleStepsInput}
               ></input>
             </label>
-            <button type="reset" onClick={AddStep}>
+            <button
+              type="reset"
+              disabled={stepInput.number === 0 || stepInput.details === ""}
+              onClick={AddStep}
+            >
               Add Step
             </button>
           </form>
@@ -138,7 +151,17 @@ export const CreateRecipe = () => {
               ></input>
             </label>
 
-            <button type="submit" onClick={submitRecipe}>
+            <button
+              disabled={
+                recipe.name === "" ||
+                recipe.description === "" ||
+                recipe.image === "" ||
+                recipe.category === "" ||
+                recipe.ingredients === ""
+              }
+              type="submit"
+              onClick={submitRecipe}
+            >
               Create Recipe
             </button>
           </form>
