@@ -1,30 +1,22 @@
 import React from "react";
+import { Faq } from "./Faq";
 import { useForm, ValidationError } from "@formspree/react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export const Support = () => {
   const { user } = useAuth0();
+  console.log(user);
   const [state, handleSubmit] = useForm("xgedqroy");
   if (state.succeeded) {
     return <h4>Thanks for your feedback!</h4>;
   }
   return (
     <section>
-      <article>
-        <h2>Frequently Asked Questions</h2>
-        <ul>
-          <li>about</li>
-          <li>pricing</li>
-          <li>user security</li>
-          <li>data usage</li>
-          <li>planned features</li>
-        </ul>
-      </article>
+      <Faq />
       <h2>Contact</h2>
       <form className="contact-form" onSubmit={handleSubmit}>
         <label htmlFor="email">Email Address</label>
         <input
-          autoFocus
           required
           id="email"
           type="email"
@@ -35,6 +27,7 @@ export const Support = () => {
         <ValidationError prefix="Email" field="email" errors={state.errors} />
         <label htmlFor="message">Message</label>
         <textarea
+          autoFocus
           required
           rows="10"
           cols="30"

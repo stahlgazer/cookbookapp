@@ -31,9 +31,17 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route
+              path="/create"
+              element={
+                <ProtectedRoute>
+                  <CreateRecipe />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/recipes" element={<RecipeList />} />
             <Route path="/recipes/:id" element={<SingleRecipe />} />
-            <Route path="/create" element={<CreateRecipe />} />
+
             <Route path="/support" element={<Support />} />
             <Route path="*" element={<Error />} />
           </Route>
