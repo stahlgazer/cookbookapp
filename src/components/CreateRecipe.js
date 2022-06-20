@@ -96,7 +96,11 @@ export const CreateRecipe = () => {
             </label>
             <button
               type="reset"
-              disabled={stepInput.number === 0 || stepInput.details === ""}
+              disabled={
+                stepInput.number === 0 ||
+                stepInput.number === "" ||
+                stepInput.details === ""
+              }
               onClick={AddStep}
             >
               Add Step

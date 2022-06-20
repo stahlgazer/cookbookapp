@@ -22,6 +22,16 @@ export const SingleRecipe = () => {
           <p>Author: {recipe.author}</p>
           <p>Description: {recipe.description}</p>
           <p>Category: {recipe.category}</p>
+          <ul>
+            Steps
+            {recipe.steps.map((step, index) => {
+              return (
+                <li key={index}>
+                  {step.number}: {step.details}
+                </li>
+              );
+            })}
+          </ul>
           <Link to="/recipes">Back to Recipes</Link>
         </div>
       )}

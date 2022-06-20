@@ -12,6 +12,10 @@ body {
   text-align: center;
 }
 
+button {
+  cursor: pointer;
+}
+
 .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
