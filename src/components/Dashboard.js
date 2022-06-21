@@ -18,6 +18,7 @@ export const Dashboard = () => {
   return (
     <section>
       <h2>Welcome to the Dashboard</h2>
+      <Link to="/create">Create New Recipe</Link>
       <h3>Your Recipes</h3>
       {recipes &&
         recipes
@@ -31,11 +32,11 @@ export const Dashboard = () => {
                 <p>{created.description}</p>
                 <p>{created.ingredients}</p>
                 <p>{created.image}</p>
+                <Link to={`edit/${created.id}`}>Edit</Link>
+                <button>Delete</button>
               </div>
             );
           })}
-
-      <Link to="/create">Create New Recipe</Link>
     </section>
   );
 };

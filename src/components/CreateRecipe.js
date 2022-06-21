@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { CreateInfo } from "./CreateInfo";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const CreateRecipe = () => {
   // create recipe + steps form
-
+  const navigate = useNavigate();
   const { user } = useAuth0();
   const [stepInput, setStepInput] = useState({
     number: 0,
@@ -36,6 +37,7 @@ export const CreateRecipe = () => {
       })
       .then((data) => {
         console.log("Final Response:", data);
+        navigate("/dashboard");
       })
       .catch((err) => console.log("error:", err));
   };
@@ -129,21 +131,30 @@ export const CreateRecipe = () => {
             </label>
             <label>
               Category:
+              <select
+                name="category"
+                id="category"
+                required
+                onChange={handleRecipeChange}
+              >
+                <option hidden disabled selected value>
+                  -- Select an Option --
+                </option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="dessert">Dessert</option>
+                <option value="snack">Snack</option>
+              </select>
+            </label>
+            <label>
+              Ingredients:
               <input
                 required
-                name="category"
+                name="ingredients"
                 type="text"
                 onChange={handleRecipeChange}
               ></input>
-              <label>
-                Ingredients
-                <input
-                  required
-                  name="ingredients"
-                  type="text"
-                  onChange={handleRecipeChange}
-                ></input>
-              </label>
             </label>
             <label>
               Image Link:
