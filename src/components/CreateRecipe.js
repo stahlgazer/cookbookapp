@@ -9,7 +9,7 @@ export const CreateRecipe = () => {
   const navigate = useNavigate();
   const { user } = useAuth0();
   const [stepInput, setStepInput] = useState({
-    number: 0,
+    number: "",
     details: "",
   });
   const [steps, setSteps] = useState([]);
@@ -48,12 +48,14 @@ export const CreateRecipe = () => {
   const handleStepsInput = (e) => {
     setStepInput((values) => ({ ...values, [e.target.name]: e.target.value }));
   };
-  const AddStep = () => {
+  const AddStep = (e) => {
+    e.preventDefault();
     setSteps((steps) => [...steps, stepInput]);
     setStepInput({
-      number: 0,
+      number: "",
       details: "",
     });
+    document.getElementById("add-steps-form").reset();
   };
   console.log(recipe);
   console.log(stepInput);
@@ -77,7 +79,7 @@ export const CreateRecipe = () => {
             <h4>Add Some Steps!</h4>
           )}
 
-          <form>
+          <form id="add-steps-form">
             <label>
               Step Number:
               <input
@@ -97,12 +99,8 @@ export const CreateRecipe = () => {
               ></input>
             </label>
             <button
-              type="reset"
-              disabled={
-                stepInput.number === 0 ||
-                stepInput.number === "" ||
-                stepInput.details === ""
-              }
+              type="submit"
+              disabled={stepInput.number === "" || stepInput.details === ""}
               onClick={AddStep}
             >
               Add Step
@@ -132,12 +130,12 @@ export const CreateRecipe = () => {
             <label>
               Category:
               <select
+                defaultValue="default"
                 name="category"
-                id="category"
                 required
                 onChange={handleRecipeChange}
               >
-                <option hidden disabled selected value>
+                <option value="default" hidden disabled>
                   -- Select an Option --
                 </option>
                 <option value="breakfast">Breakfast</option>

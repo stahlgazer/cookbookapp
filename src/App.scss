@@ -1,5 +1,6 @@
 // variables
 $primaryColor: dodgerblue;
+$secondaryColor: white;
 
 // reset
 * {
@@ -36,14 +37,14 @@ button{cursor: pointer;}
             font-size: 16px;
             padding: 5px;
             margin: 0 2px;
-            border: 2px solid white;
+            border: 2px solid $secondaryColor;
             border-radius: 5px;
-            background-color: white;
+            background-color: $secondaryColor;
             color: $primaryColor;
 
             &:hover {
                 background-color: $primaryColor;
-                color: white;
+                color: $secondaryColor;
             }
         }
     }
@@ -75,7 +76,7 @@ button{cursor: pointer;}
         top: 50%;
         transform: translate(-50%, -50%);
         border: 1px solid $primaryColor;
-        background: rgba($color: white, $alpha: .5);
+        background: rgba($color: $secondaryColor, $alpha: .5);
         padding: 5%;
 
         h1 {
@@ -105,7 +106,7 @@ button{cursor: pointer;}
         }
 
         button {
-            color: white;
+            color: $secondaryColor;
             background-color: $primaryColor;
             width: 150px;
             padding: 2%;
@@ -190,7 +191,7 @@ button{cursor: pointer;}
 
 footer {
     border-top: 1px solid rgb(87, 87, 87);
-    color: white;
+    color: $secondaryColor;
     background-color: $primaryColor;
     padding: 10px;
     position: fixed;
