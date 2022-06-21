@@ -8,6 +8,7 @@ import { Home } from "./components/Home";
 import { Error } from "./components/Error";
 import { Support } from "./components/Support";
 import { CreateRecipe } from "./components/CreateRecipe";
+import { EditRecipe } from "./components/EditRecipe";
 import { ProtectedRoute } from "./utils/ProtectedRoute";
 import { Auth0Provider } from "@auth0/auth0-react";
 import "./App.scss";
@@ -36,6 +37,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <CreateRecipe />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/edit/:id"
+              element={
+                <ProtectedRoute>
+                  <EditRecipe />
                 </ProtectedRoute>
               }
             />

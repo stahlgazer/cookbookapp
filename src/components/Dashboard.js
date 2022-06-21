@@ -32,7 +32,7 @@ export const Dashboard = () => {
                 <p>{created.description}</p>
                 <p>{created.ingredients}</p>
                 <p>{created.image}</p>
-                <Link to={`edit/${created.id}`}>Edit</Link>
+                <Link to={`/edit/${created.id}`}>Edit</Link>
                 <button>Delete</button>
               </div>
             );
