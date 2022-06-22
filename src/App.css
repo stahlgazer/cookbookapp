@@ -5,6 +5,7 @@
   border: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
@@ -197,7 +198,26 @@ button {
           flex-direction: column;
 }
 
-.dashboard-recipes-container {
+section .create-recipe-btn {
+  display: block;
+  color: white;
+  background-color: dodgerblue;
+  width: 120px;
+  padding: 5px;
+  margin: 5px auto;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+section .create-recipe-btn:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: dodgerblue;
+  background-color: white;
+  border: 1px solid dodgerblue;
+}
+
+section .dashboard-recipes-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -210,7 +230,8 @@ button {
   border: 1px solid gray;
 }
 
-.dashboard-recipes-container .dashboard-titles {
+section .dashboard-recipes-container .dashboard-titles {
+  background-color: dodgerblue;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -219,15 +240,18 @@ button {
           justify-content: center;
 }
 
-.dashboard-recipes-container .dashboard-titles h3 {
+section .dashboard-recipes-container .dashboard-titles h3 {
+  color: white;
   width: 20%;
 }
 
-.dashboard-recipes-container .dashboard-recipe {
+section .dashboard-recipes-container .dashboard-recipe {
   border: 1px solid gray;
+  background-color: #2e2e2e;
+  color: white;
 }
 
-.dashboard-recipes-container .dashboard-recipe .dashboard-recipe-details {
+section .dashboard-recipes-container .dashboard-recipe .dashboard-recipe-details {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -235,11 +259,11 @@ button {
       justify-content: space-around;
 }
 
-.dashboard-recipes-container .dashboard-recipe .dashboard-recipe-details p {
+section .dashboard-recipes-container .dashboard-recipe .dashboard-recipe-details p {
   width: 100%;
 }
 
-.dashboard-recipes-container .dashboard-recipe .dashboard-btn-container {
+section .dashboard-recipes-container .dashboard-recipe .dashboard-btn-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -248,12 +272,11 @@ button {
           justify-content: center;
 }
 
-.dashboard-recipes-container .dashboard-recipe .dashboard-btn-container button {
+section .dashboard-recipes-container .dashboard-recipe .dashboard-btn-container button {
   text-decoration: none;
   background-color: white;
-  width: 75px;
-  margin: 5px;
-  padding: 5px;
+  margin: 10px 10px;
+  padding: 3px;
   border-radius: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -265,19 +288,18 @@ button {
       -ms-flex-align: center;
           align-items: center;
   font-size: 14px;
-  border: 1px solid red;
+  border: 2px solid red;
 }
 
-.dashboard-recipes-container .dashboard-recipe .dashboard-btn-container button:hover {
+section .dashboard-recipes-container .dashboard-recipe .dashboard-btn-container button:hover {
   color: red;
 }
 
-.dashboard-recipes-container .dashboard-recipe .dashboard-btn-container a {
+section .dashboard-recipes-container .dashboard-recipe .dashboard-btn-container .view {
   text-decoration: none;
   background-color: white;
-  width: 75px;
-  margin: 5px;
-  padding: 5px;
+  margin: 10px 10px;
+  padding: 3px;
   border-radius: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -289,10 +311,36 @@ button {
       -ms-flex-align: center;
           align-items: center;
   font-size: 14px;
-  border: 1px solid green;
+  border: 2px solid dodgerblue;
+  color: black;
 }
 
-.dashboard-recipes-container .dashboard-recipe .dashboard-btn-container a:hover {
+section .dashboard-recipes-container .dashboard-recipe .dashboard-btn-container .view:hover {
+  color: dodgerblue;
+}
+
+section .dashboard-recipes-container .dashboard-recipe .dashboard-btn-container .edit {
+  text-decoration: none;
+  background-color: white;
+  margin: 10px 10px;
+  padding: 3px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  color: black;
+  border: 2px solid green;
+  background-color: white;
+}
+
+section .dashboard-recipes-container .dashboard-recipe .dashboard-btn-container .edit:hover {
   color: green;
 }
 

@@ -16,11 +16,14 @@ export const Dashboard = () => {
       .catch((err) => console.log(err));
   }, []);
   console.log(recipes);
+  console.log(user);
 
   return (
     <section>
-      <h2>Welcome to the Dashboard</h2>
-      <Link to="/create">Create New Recipe</Link>
+      <h2>Welcome back, {user.nickname}!</h2>
+      <Link to="/create" className="create-recipe-btn">
+        Create Recipe
+      </Link>
       <h3>Your Recipes</h3>
       <div className="dashboard-recipes-container">
         <div className="dashboard-titles">
@@ -49,7 +52,10 @@ export const Dashboard = () => {
                     <p>{created.image}</p>
                   </div>
                   <div className="dashboard-btn-container">
-                    <Link to={`/edit/${created.id}`}>
+                    <Link className="view" to={`/recipes/${created.id}`}>
+                      View Recipe
+                    </Link>
+                    <Link className="edit" to={`/edit/${created.id}`}>
                       <p>Edit</p>
                       <EditIcon style={{ color: "green" }} />
                     </Link>

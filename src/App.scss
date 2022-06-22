@@ -6,9 +6,8 @@ $secondaryColor: white;
 @mixin dashboard-button-format {
     text-decoration: none;
     background-color: $secondaryColor;
-    width: 75px;
-    margin: 5px;
-    padding: 5px;
+    margin: 10px 10px;
+    padding: 3px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -23,6 +22,7 @@ $secondaryColor: white;
     outline: none;
     border: 0px;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 body {
@@ -185,52 +185,90 @@ button {
 }
 
 // dashboard
-.dashboard-recipes-container {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    margin: 0 auto;
-    border: 1px solid gray;
+section {
 
-    .dashboard-titles {
-        display: flex;
-        justify-content: center;
-        h3{
-            width:20%;
+    .create-recipe-btn {
+        display: block;
+        color: $secondaryColor;
+        background-color: $primaryColor;
+        width: 120px;
+        padding: 5px;
+        margin: 5px auto;
+        border-radius: 5px;
+        border: 1px solid $secondaryColor;
+
+        &:hover {
+            transition: 0.5s;
+            color: $primaryColor;
+            background-color: $secondaryColor;
+            border: 1px solid $primaryColor;
         }
     }
 
-    .dashboard-recipe {
+    .dashboard-recipes-container {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
         border: 1px solid gray;
-        
-        .dashboard-recipe-details {
-            display: flex;
-            justify-content: space-around;
 
-            p {
-                width: 100%;
-            }
-        }
-
-        .dashboard-btn-container {
+        .dashboard-titles {
+            background-color: $primaryColor;
             display: flex;
             justify-content: center;
 
-            button {
-                @include dashboard-button-format;
-                border: 1px solid red;
+            h3 {
+                color: $secondaryColor;
+                width: 20%;
+            }
+        }
 
-                &:hover {
-                    color: red;
+        .dashboard-recipe {
+            border: 1px solid gray;
+            background-color: rgb(46, 46, 46);
+            color: rgb(255, 255, 255);
+
+            .dashboard-recipe-details {
+                display: flex;
+                justify-content: space-around;
+
+                p {
+                    width: 100%;
                 }
             }
 
-            a {
-                @include dashboard-button-format;
-                border: 1px solid green;
+            .dashboard-btn-container {
+                display: flex;
+                justify-content: center;
 
-                &:hover {
-                    color: green;
+                button {
+                    @include dashboard-button-format;
+                    border: 2px solid red;
+
+                    &:hover {
+                        color: red;
+                    }
+                }
+
+                .view {
+                    @include dashboard-button-format;
+                    border: 2px solid $primaryColor;
+                    color: black;
+
+                    &:hover {
+                        color: $primaryColor;
+                    }
+                }
+
+                .edit {
+                    @include dashboard-button-format;
+                    color: black;
+                    border: 2px solid green;
+                    background-color: white;
+
+                    &:hover {
+                        color: green;
+                    }
                 }
             }
         }
