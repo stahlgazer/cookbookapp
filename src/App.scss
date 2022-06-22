@@ -2,6 +2,20 @@
 $primaryColor: dodgerblue;
 $secondaryColor: white;
 
+// mixins 
+@mixin dashboard-button-format {
+    text-decoration: none;
+    background-color: $secondaryColor;
+    width: 75px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
 // reset
 * {
     margin: 0px;
@@ -15,7 +29,10 @@ body {
     font-family: 'Joan', serif;
     text-align: center;
 }
-button{cursor: pointer;}
+
+button {
+    cursor: pointer;
+}
 
 // shared layout navbar
 .navbar {
@@ -153,17 +170,73 @@ button{cursor: pointer;}
         }
     }
 }
+
 //create recipe page
-.create-form-container{
-    border:1px solid black;
-    display:flex;
+.create-form-container {
+    border: 1px solid black;
+    display: flex;
     justify-content: center;
-    form{
-        display:flex;
+
+    form {
+        display: flex;
         flex-direction: column;
-        
+
     }
 }
+
+// dashboard
+.dashboard-recipes-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid gray;
+
+    .dashboard-titles {
+        display: flex;
+        justify-content: center;
+        h3{
+            width:20%;
+        }
+    }
+
+    .dashboard-recipe {
+        border: 1px solid gray;
+        
+        .dashboard-recipe-details {
+            display: flex;
+            justify-content: space-around;
+
+            p {
+                width: 100%;
+            }
+        }
+
+        .dashboard-btn-container {
+            display: flex;
+            justify-content: center;
+
+            button {
+                @include dashboard-button-format;
+                border: 1px solid red;
+
+                &:hover {
+                    color: red;
+                }
+            }
+
+            a {
+                @include dashboard-button-format;
+                border: 1px solid green;
+
+                &:hover {
+                    color: green;
+                }
+            }
+        }
+    }
+}
+
 // contact formspree styles
 .contact-form {
     border: 1px solid black;

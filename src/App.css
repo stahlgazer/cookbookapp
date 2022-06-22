@@ -197,6 +197,105 @@ button {
           flex-direction: column;
 }
 
+.dashboard-recipes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid gray;
+}
+
+.dashboard-recipes-container .dashboard-titles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dashboard-recipes-container .dashboard-titles h3 {
+  width: 20%;
+}
+
+.dashboard-recipes-container .dashboard-recipe {
+  border: 1px solid gray;
+}
+
+.dashboard-recipes-container .dashboard-recipe .dashboard-recipe-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.dashboard-recipes-container .dashboard-recipe .dashboard-recipe-details p {
+  width: 100%;
+}
+
+.dashboard-recipes-container .dashboard-recipe .dashboard-btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dashboard-recipes-container .dashboard-recipe .dashboard-btn-container button {
+  text-decoration: none;
+  background-color: white;
+  width: 75px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  border: 1px solid red;
+}
+
+.dashboard-recipes-container .dashboard-recipe .dashboard-btn-container button:hover {
+  color: red;
+}
+
+.dashboard-recipes-container .dashboard-recipe .dashboard-btn-container a {
+  text-decoration: none;
+  background-color: white;
+  width: 75px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  border: 1px solid green;
+}
+
+.dashboard-recipes-container .dashboard-recipe .dashboard-btn-container a:hover {
+  color: green;
+}
+
 .contact-form {
   border: 1px solid black;
   padding: 10px;
