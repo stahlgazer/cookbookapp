@@ -39,7 +39,10 @@ export const CreateRecipe = () => {
         console.log("Final Response:", data);
         navigate("/dashboard");
       })
-      .catch((err) => console.log("error:", err));
+      .catch((err) => {
+        console.log("error:", err);
+        navigate("/dashboard");
+      });
   };
 
   const handleRecipeChange = (e) => {

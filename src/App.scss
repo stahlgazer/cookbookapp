@@ -183,6 +183,11 @@ button {
             border: 1px solid lightgray;
             padding: 10px;
             margin: 10px;
+
+            .recipe-cards-photo {
+                max-width: 100%;
+                height: auto;
+            }
         }
     }
 }
@@ -206,18 +211,18 @@ section {
     .create-recipe-btn {
         display: block;
         color: $secondaryColor;
-        background-color: $primaryColor;
-        width: 120px;
+        background-color: green;
+        width: 150px;
         padding: 5px;
-        margin: 5px auto;
+        margin: 15px auto;
         border-radius: 5px;
         border: 1px solid $secondaryColor;
 
         &:hover {
             transition: 0.5s;
-            color: $primaryColor;
+            color: green;
             background-color: $secondaryColor;
-            border: 1px solid $primaryColor;
+            border: 1px solid green;
         }
     }
 
@@ -240,17 +245,24 @@ section {
         }
 
         .dashboard-recipe {
-            border-radius:5px;
+            border-radius: 5px;
             background-color: $thirdColor;
             color: rgb(255, 255, 255);
-            margin: 10px 0px;
+            margin-top: 10px;
             padding: 10px 0px;
 
 
             .dashboard-recipe-details {
                 display: flex;
-                justify-content: space-around;
+                align-items: center;
 
+                img {
+                    display:block;
+                    border-radius:20px;
+                    max-width: 12%;
+                    margin: auto;
+                    height: auto;
+                  }
 
                 p {
 
@@ -262,6 +274,7 @@ section {
 
             .dashboard-btn-container {
                 display: flex;
+                justify-content: center;
 
                 button {
                     @include dashboard-button-format;

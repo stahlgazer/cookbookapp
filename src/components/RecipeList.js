@@ -53,12 +53,16 @@ export const RecipeList = () => {
             .map((recipe) => {
               return (
                 <div className="recipes-cards" key={recipe.id}>
-                  <p>{recipe.image}</p>
+                  <img
+                    className="recipe-cards-photo"
+                    alt="recipe preview"
+                    src={recipe.image}
+                  />
                   <p>Name: {recipe.name}</p>
                   <p>Author: {recipe.author}</p>
                   <p>Description: {recipe.description}</p>
                   <p>Category: {recipe.category}</p>
-                  <Link to={`/recipes/${recipe.id}`}>Details</Link>
+                  <Link to={`/recipes/${recipe.id}`}>View</Link>
                 </div>
               );
             })}

@@ -4,6 +4,7 @@ import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import PageviewIcon from "@mui/icons-material/Pageview";
 
 export const Dashboard = () => {
   const { user } = useAuth0();
@@ -49,11 +50,12 @@ export const Dashboard = () => {
                     )}
 
                     <p>{created.ingredients}</p>
-                    <p>{created.image}</p>
+                    <img alt="recipe thumbnail preview" src={created.image} />
                   </div>
                   <div className="dashboard-btn-container">
                     <Link className="view" to={`/recipes/${created.id}`}>
-                      View Recipe
+                      <p>View</p>
+                      <PageviewIcon style={{color:'dodgerblue'}}/>
                     </Link>
                     <Link className="edit" to={`/edit/${created.id}`}>
                       <p>Edit</p>
