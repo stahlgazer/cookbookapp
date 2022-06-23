@@ -1,18 +1,20 @@
 // variables
 $primaryColor: dodgerblue;
 $secondaryColor: white;
+$thirdColor: #3F4448;
 
 // mixins 
 @mixin dashboard-button-format {
     text-decoration: none;
-    background-color: $secondaryColor;
+    color: $secondaryColor;
+    background-color: $thirdColor;
     margin: 10px 10px;
     padding: 3px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
+    font-size: .75rem;
 }
 
 // reset
@@ -140,16 +142,30 @@ button {
     margin-bottom: 50px;
 
     .filters-container {
-        margin: 10px;
+        background-color: $thirdColor;
 
         button {
             cursor: pointer;
-            margin: 10px;
+            width: 75px;
+            color: $thirdColor;
+
+            margin: 5px 5px;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: .75rem;
         }
     }
 
     .search-container {
-        background-color: rgb(197, 226, 255);
+        background-color: $primaryColor;
+        color: $secondaryColor;
+        padding: 5px;
+
+        input {
+            text-align: center;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
     }
 
     .recipes-container {
@@ -210,7 +226,7 @@ section {
         flex-direction: column;
         width: 90%;
         margin: 0 auto;
-        border: 1px solid gray;
+
 
         .dashboard-titles {
             background-color: $primaryColor;
@@ -219,27 +235,33 @@ section {
 
             h3 {
                 color: $secondaryColor;
-                width: 20%;
+                width: 100%;
             }
         }
 
         .dashboard-recipe {
-            border: 1px solid gray;
-            background-color: rgb(46, 46, 46);
+            border-radius:5px;
+            background-color: $thirdColor;
             color: rgb(255, 255, 255);
+            margin: 10px 0px;
+            padding: 10px 0px;
+
 
             .dashboard-recipe-details {
                 display: flex;
                 justify-content: space-around;
 
+
                 p {
-                    width: 100%;
+
+                    width: 20%;
+                    overflow-wrap: break-word;
+
                 }
             }
 
             .dashboard-btn-container {
                 display: flex;
-                justify-content: center;
 
                 button {
                     @include dashboard-button-format;
@@ -253,7 +275,6 @@ section {
                 .view {
                     @include dashboard-button-format;
                     border: 2px solid $primaryColor;
-                    color: black;
 
                     &:hover {
                         color: $primaryColor;
@@ -262,9 +283,7 @@ section {
 
                 .edit {
                     @include dashboard-button-format;
-                    color: black;
                     border: 2px solid green;
-                    background-color: white;
 
                     &:hover {
                         color: green;
