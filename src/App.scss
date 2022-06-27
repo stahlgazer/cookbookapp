@@ -97,6 +97,7 @@ button {
         border: 1px solid $primaryColor;
         background: rgba($color: $secondaryColor, $alpha: .5);
         padding: 5%;
+        min-width: 400px;
 
         h1 {
             color: $primaryColor;
@@ -179,7 +180,8 @@ button {
 
         .recipes-cards {
             flex-grow: 1;
-            max-width: 350px;
+            width: 300px;
+            max-width: 300px;
             border: 1px solid lightgray;
             padding: 10px;
             margin: 10px;
@@ -260,11 +262,11 @@ section {
 
                 img {
                     border-radius: 20px;
-                    width:15%;
+                    width: 15%;
                     margin: auto;
                     height: 200px;
-                    object-fit:cover;
-                    object-position:center;
+                    object-fit: cover;
+                    object-position: center;
                 }
 
                 p {
