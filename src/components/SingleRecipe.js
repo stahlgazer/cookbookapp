@@ -17,7 +17,10 @@ export const SingleRecipe = () => {
     <section>
       {recipe && (
         <div key={recipe.id}>
-          <p>{recipe.image}</p>
+          <img
+            alt="individual recipe preview"
+            src={recipe.image}
+          />
           <p>Name: {recipe.name}</p>
           <p>Author: {recipe.author}</p>
           <p>Description: {recipe.description}</p>

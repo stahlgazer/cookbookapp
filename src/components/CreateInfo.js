@@ -4,7 +4,7 @@ export const CreateInfo = () => {
       <h1>Create New Recipe</h1>
       <ul>
         Instructions:
-        <li>Images should be in link format, ex: http://yourimagelinkhere.</li>
+        <li>Images should be in link format, ex: http://yourimagelinkhere.jpg</li>
         <li>
           Complete all fields and adding steps before hitting Create Recipe.
         </li>

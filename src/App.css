@@ -8,9 +8,11 @@
   text-decoration: none;
 }
 
-body {
+html {
   font-family: 'Joan', serif;
   text-align: center;
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
 }
 
 button {
@@ -30,6 +32,17 @@ button {
   top: 0;
   padding: 25px;
   border-bottom: 1px solid #575757;
+}
+
+.navbar .logo {
+  margin-left: 5px;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 85px;
+  width: auto;
+  z-index: -1;
 }
 
 .navbar .navitems {
@@ -66,6 +79,7 @@ button {
 }
 
 .home-container {
+  margin-bottom: -1px;
   height: 90vh;
   background-image: url("./images/cookbook.jpg");
   background-repeat: no-repeat;
@@ -202,6 +216,11 @@ button {
      object-position: center;
 }
 
+section div img {
+  width: 500px;
+  height: auto;
+}
+
 .create-form-container {
   border: 1px solid black;
   display: -webkit-box;
@@ -220,6 +239,10 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+section {
+  margin-bottom: 50px;
 }
 
 section .create-recipe-btn {

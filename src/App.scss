@@ -17,7 +17,7 @@ $thirdColor: #3F4448;
     font-size: .75rem;
 }
 
-// reset
+// resets and desired behavior
 * {
     margin: 0px;
     padding: 0px;
@@ -27,9 +27,11 @@ $thirdColor: #3F4448;
     text-decoration: none;
 }
 
-body {
+html {
     font-family: 'Joan', serif;
     text-align: center;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
 }
 
 button {
@@ -45,6 +47,17 @@ button {
     top: 0;
     padding: 25px;
     border-bottom: 1px solid rgb(87, 87, 87);
+
+    .logo {
+        margin-left: 5px;
+        padding: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 85px;
+        width: auto;
+        z-index: -1;
+    }
 
     .navitems {
         display: flex;
@@ -79,6 +92,7 @@ button {
 
 // home page
 .home-container {
+    margin-bottom: -1px;
     height: 90vh;
     background-image: url('./images/cookbook.jpg');
     background-repeat: no-repeat;
@@ -196,6 +210,16 @@ button {
     }
 }
 
+// individual recipe page
+section {
+    div {
+        img {
+            width: 500px;
+            height: auto;
+        }
+    }
+}
+
 //create recipe page
 .create-form-container {
     border: 1px solid black;
@@ -211,6 +235,7 @@ button {
 
 // dashboard
 section {
+    margin-bottom: 50px;
 
     .create-recipe-btn {
         display: block;

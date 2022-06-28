@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Login } from "./Login";
 import { Logout } from "./Logout";
 import Avatar from "@mui/material/Avatar";
+import logo from "../images/logo.png";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export const Navbar = () => {
@@ -10,6 +11,7 @@ export const Navbar = () => {
 
   return (
     <nav className="navbar">
+      <img className="logo" src={logo} alt="our digital cookbook logo" />
       <div className="navitems">
         <NavLink
           className="navbtn"
