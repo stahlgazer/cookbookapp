@@ -8,15 +8,10 @@ export const Home = () => {
       <div className="info-container">
         <h1>Our Digital Cookbook</h1>
         <ul>
-          <li>
-            A single place to create and manage your recipes, as well as check
-            out recipes other users have created.
-          </li>
-          <li>
-            Manage all of your recipes in your dashboard, while having complete
-            control to update and delete anything you've created.
-          </li>
-          <li>Search any recipe created by recipe name or category.</li>
+          <li>A single place to create and explore recipes</li>
+          <li>Check out recipes other users have created</li>
+          <li>Manage your recipes in the dashboard</li>
+          <li>Search recipes by name or category</li>
         </ul>
         <button className="homebtn" onClick={() => loginWithRedirect()}>
           Get Started

@@ -79,12 +79,12 @@ button {
 }
 
 .home-container {
-  margin-bottom: -1px;
-  height: 90vh;
+  height: 87vh;
   background-image: url("./images/cookbook.jpg");
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-position: center;
   background-size: cover;
+  margin-bottom: -1px;
 }
 
 .home-container .info-container {
@@ -109,7 +109,7 @@ button {
   border: 1px solid dodgerblue;
   background: rgba(255, 255, 255, 0.5);
   padding: 5%;
-  min-width: 400px;
+  min-width: 350px;
 }
 
 .home-container .info-container h1 {
@@ -126,7 +126,7 @@ button {
 }
 
 .home-container .info-container ul li {
-  margin: 2%;
+  margin: 2% 0%;
 }
 
 .home-container .info-container ul li::before {
