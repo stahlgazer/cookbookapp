@@ -9,15 +9,26 @@ import PageviewIcon from "@mui/icons-material/Pageview";
 export const Dashboard = () => {
   const { user } = useAuth0();
   const [recipes, setRecipes] = useState();
+  const [deleted, setDeleted] = useState(0);
 
   useEffect(() => {
     axios
       .get("https://digitalcookbookapi.herokuapp.com/recipes")
       .then((response) => setRecipes(response.data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [deleted]);
   console.log(recipes);
   console.log(user);
+
+  const handleDelete = (id) => {
+    axios
+      .delete(`https://digitalcookbookapi.herokuapp.com/recipes/${id}`)
+      .then((res) => {
+        console.log(res);
+        setDeleted(deleted + 1);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <section>
@@ -55,14 +66,14 @@ export const Dashboard = () => {
                   <div className="dashboard-btn-container">
                     <Link className="view" to={`/recipes/${created.id}`}>
                       <p>View</p>
-                      <PageviewIcon style={{color:'dodgerblue'}}/>
+                      <PageviewIcon style={{ color: "dodgerblue" }} />
                     </Link>
                     <Link className="edit" to={`/edit/${created.id}`}>
                       <p>Edit</p>
                       <EditIcon style={{ color: "green" }} />
                     </Link>
 
-                    <button>
+                    <button onClick={() => handleDelete(created.id)}>
                       <p>Delete</p>
                       <DeleteForeverIcon style={{ color: "red" }} />
                     </button>

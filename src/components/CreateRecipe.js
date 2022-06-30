@@ -8,7 +8,6 @@ export const CreateRecipe = () => {
   const navigate = useNavigate();
   const { user } = useAuth0();
 
-  // change this to not have user step input for number number: "", => number: 1,
   const [stepInput, setStepInput] = useState({
     number: 1,
     details: "",
@@ -23,14 +22,13 @@ export const CreateRecipe = () => {
     ingredients: "",
   });
 
-  // post recipe .then post steps for recipe
   const submitRecipe = (e) => {
     e.preventDefault();
     axios
       .post("https://digitalcookbookapi.herokuapp.com/recipes", recipe)
       .then((response) => {
         let recipeId = response.data.id;
-        console.log("response: ", response, "recipeid: ", recipeId)
+        console.log("response: ", response, "recipeid: ", recipeId);
         steps.forEach((step) => (step.recipe_id = recipeId));
         return axios.post(
           `https://digitalcookbookapi.herokuapp.com/steps/${recipeId}`,
@@ -54,8 +52,6 @@ export const CreateRecipe = () => {
     setStepInput((values) => ({ ...values, [e.target.name]: e.target.value }));
   };
 
-  // change this to not have user step input for number
-  // number: "", => number: steps.length + 1,
   const AddStep = (e) => {
     e.preventDefault();
     setSteps((steps) => [...steps, stepInput]);
@@ -66,8 +62,8 @@ export const CreateRecipe = () => {
     document.getElementById("add-steps-form").reset();
   };
   console.log("recipe: ", recipe);
-  console.log("input: ",stepInput);
-  console.log("steps: ",steps);
+  console.log("input: ", stepInput);
+  console.log("steps: ", steps);
 
   return (
     <section>
@@ -88,16 +84,6 @@ export const CreateRecipe = () => {
           )}
 
           <form id="add-steps-form">
-            {/* remove this to not have user step input for number*/}
-            {/* <label>
-              Step Number:
-              <input
-                required
-                name="number"
-                type="number"
-                onChange={handleStepsInput}
-              ></input>
-            </label> */}
             <label>
               Step Details:
               <input
@@ -109,8 +95,6 @@ export const CreateRecipe = () => {
             </label>
             <button
               type="submit"
-              /* remove this to not have user step input for number stepInput.number === "" ||
-               */
               disabled={stepInput.details === ""}
               onClick={AddStep}
             >
