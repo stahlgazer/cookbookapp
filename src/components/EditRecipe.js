@@ -9,6 +9,7 @@ export const EditRecipe = () => {
   const { id } = useParams();
   const [recipe, setRecipe] = useState();
   const [updated, setUpdated] = useState(0);
+  const [stepInput, setStepInput] = useState();
 
   // grab recipe details and steps into default state
   useEffect(() => {
@@ -47,14 +48,22 @@ export const EditRecipe = () => {
   };
 
   // submit changes, add step, edit step, delete step
+
+  const handleStepChange = (e) => {
+    setStepInput(() => ({ [e.target.name]: e.target.value }));
+  };
+
   const onStepUpdate = (stepId) => {
     axios
-      .put(`https://digitalcookbookapi.herokuapp.com/steps/${stepId}`, {
-        details: "testing step update",
-      })
+      .put(
+        `https://digitalcookbookapi.herokuapp.com/steps/${stepId}`,
+        stepInput
+      )
       .then((res) => {
         console.log(res);
-        setUpdated(setUpdated + 1);
+        setUpdated(updated + 1);
+        setStepInput("");
+        document.getElementById("steps-update").value = "";
       })
       .catch((err) => console.log(err));
   };
@@ -71,7 +80,12 @@ export const EditRecipe = () => {
               return (
                 <li key={step.id}>
                   {step.number}: {step.details}
-                  <input type="text" />
+                  <input
+                    id="steps-update"
+                    type="text"
+                    name="details"
+                    onChange={handleStepChange}
+                  />
                   <button onClick={() => onStepUpdate(step.id)}>Update</button>
                 </li>
               );
