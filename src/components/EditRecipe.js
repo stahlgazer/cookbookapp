@@ -10,6 +10,7 @@ export const EditRecipe = () => {
   const [recipe, setRecipe] = useState();
   const [updated, setUpdated] = useState(0);
   const [stepInput, setStepInput] = useState();
+  const [currentStep, setCurrentStep] = useState(0);
 
   // grab recipe details and steps into default state
   useEffect(() => {
@@ -61,6 +62,7 @@ export const EditRecipe = () => {
       )
       .then((res) => {
         console.log(res);
+        setCurrentStep(0);
         setUpdated(updated + 1);
         setStepInput("");
         document.getElementById("steps-update").value = "";
@@ -76,20 +78,38 @@ export const EditRecipe = () => {
         <div>
           <h3>Steps</h3>
           <ul>
-            {recipe.steps.map((step) => {
-              return (
-                <li key={step.id}>
-                  {step.number}: {step.details}
-                  <input
-                    id="steps-update"
-                    type="text"
-                    name="details"
-                    onChange={handleStepChange}
-                  />
-                  <button onClick={() => onStepUpdate(step.id)}>Update</button>
-                </li>
-              );
-            })}
+            {recipe.steps
+              .sort((a, b) => {
+                return a.id - b.id;
+              })
+              .map((step) => {
+                return (
+                  <li key={step.id}>
+                    {step.number}: {step.details}
+                    {currentStep === 0 ? (
+                      <button onClick={() => setCurrentStep(step.id)}>
+                        Edit
+                      </button>
+                    ) : null}
+                    {currentStep === step.id ? (
+                      <>
+                        <input
+                          id="steps-update"
+                          type="text"
+                          name="details"
+                          onChange={handleStepChange}
+                        />
+                        <button
+                          disabled={!stepInput}
+                          onClick={() => onStepUpdate(step.id)}
+                        >
+                          Update
+                        </button>
+                      </>
+                    ) : null}
+                  </li>
+                );
+              })}
           </ul>
           <form>
             <label>
