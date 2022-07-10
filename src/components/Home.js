@@ -8,10 +8,10 @@ export const Home = () => {
       <div className="info-container">
         <h1>Our Digital Cookbook</h1>
         <ul>
-          <li>A single place to create and explore recipes</li>
           <li>Check out recipes other users have created</li>
-          <li>Manage your recipes in the dashboard</li>
-          <li>Search recipes by name or category</li>
+          <li>Create and manage your recipes in the dashboard</li>
+          <li>Search for any recipes by name or category</li>
+          <li>No apps, no downloads, what a piece of cake!</li>
         </ul>
         <button className="homebtn" onClick={() => loginWithRedirect()}>
           Get Started

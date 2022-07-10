@@ -94,6 +94,7 @@ export const EditRecipe = () => {
                     {currentStep === step.id ? (
                       <>
                         <input
+                          autoFocus
                           id="steps-update"
                           type="text"
                           name="details"
